@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -60,5 +61,15 @@ public class StreamTest {
         List<Integer> allMatchList = Arrays.asList(2, 4, 6);
         assertTrue(allMatchList.stream().allMatch(x -> x % 2 == 0));
         assertFalse(allMatchList.stream().allMatch(x -> x == 2));
+    }
+
+    @Test
+    public void test8() {
+        // 畳み込み
+        Optional<Integer> sum = Stream.generate(() -> 1)
+                .limit(5)
+                .reduce((elem, acc) -> elem + acc);
+        assertTrue(sum.isPresent());
+        assertEquals(sum.get(), Integer.valueOf(5));
     }
 }
