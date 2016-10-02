@@ -1,0 +1,18 @@
+# Java
+*.class
+*.jar
+
+# Idea
+.idea
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+
+# Gradle
+/build/
+.gradle
+!gradle-wrapper.jar
+
