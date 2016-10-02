@@ -68,7 +68,7 @@ public class StreamTest {
         // 畳み込み
         Optional<Integer> sum = Stream.generate(() -> 1)
                 .limit(5)
-                .reduce((elem, acc) -> elem + acc);
+                .reduce((acc, elem) -> elem + acc);
         assertTrue(sum.isPresent());
         assertEquals(sum.get(), Integer.valueOf(5));
     }
